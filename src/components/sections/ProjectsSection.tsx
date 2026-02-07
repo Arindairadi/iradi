@@ -5,30 +5,34 @@ import { Github, ExternalLink } from "lucide-react";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "A full-stack web application with product listings, cart functionality, and payment integration.",
-    tech: ["React", "Node.js", "MongoDB", "Stripe"],
-    github: "https://github.com",
-    demo: "https://example.com",
+    title: "FarmNet",
+    description: "An innovative digital platform designed to empower farmers by connecting them to critical agricultural resources, information, and markets — bridging the gap between farmers and opportunity.",
+    tech: ["HTML", "CSS", "JavaScript"],
+    github: "https://github.com/Arindairadi/Farmnet",
   },
   {
-    title: "Data Analytics Dashboard",
-    description: "Interactive dashboard for visualizing and analyzing large datasets with real-time filtering.",
-    tech: ["Python", "Pandas", "D3.js", "Flask"],
-    github: "https://github.com",
+    title: "LYCA Health System",
+    description: "A web-based health system providing accessible healthcare information and services through a modern digital interface.",
+    tech: ["HTML", "CSS", "JavaScript"],
+    github: "https://github.com/Arindairadi/LYCA",
   },
   {
-    title: "Task Management App",
-    description: "A collaborative task manager with real-time updates, user authentication, and team workspaces.",
-    tech: ["React", "TypeScript", "Firebase"],
-    github: "https://github.com",
-    demo: "https://example.com",
+    title: "Sky Pulse",
+    description: "A web-based application that provides real-time weather updates and location-based forecasts to keep users informed about current conditions.",
+    tech: ["JavaScript", "API Integration", "CSS"],
+    github: "https://github.com/Arindairadi/sky-pulse",
   },
   {
-    title: "Community Impact Tracker",
-    description: "Platform connecting volunteers with local projects and tracking social impact metrics.",
-    tech: ["React", "Node.js", "PostgreSQL"],
-    github: "https://github.com",
+    title: "Student Management System",
+    description: "A comprehensive system for managing student records, enrollment, and academic data with an intuitive admin interface.",
+    tech: ["PHP", "MySQL", "HTML", "CSS"],
+    github: "https://github.com/Arindairadi/student-managment-system",
+  },
+  {
+    title: "Multiplication Quiz Game",
+    description: "An interactive quiz game perfect for learners of all ages to enhance their math abilities through quick and engaging quizzes.",
+    tech: ["JavaScript", "HTML", "CSS"],
+    github: "https://github.com/Arindairadi/multiplication-quiz-game",
   },
 ];
 
@@ -45,7 +49,7 @@ export default function ProjectsSection() {
         <h3 className="mb-12 text-center text-3xl font-bold text-foreground sm:text-4xl">
           What I've Built
         </h3>
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((p) => (
             <div
               key={p.title}
@@ -67,14 +71,6 @@ export default function ProjectsSection() {
                     Code
                   </a>
                 </Button>
-                {p.demo && (
-                  <Button size="sm" asChild>
-                    <a href={p.demo} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="mr-1 h-3.5 w-3.5" />
-                      Demo
-                    </a>
-                  </Button>
-                )}
               </div>
             </div>
           ))}

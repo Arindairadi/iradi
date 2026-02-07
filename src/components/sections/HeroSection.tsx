@@ -5,7 +5,6 @@ import { ArrowDown, Mail } from "lucide-react";
 export default function HeroSection() {
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-20">
-      {/* Subtle grid pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(hsl(var(--border))_1px,transparent_1px),linear-gradient(90deg,hsl(var(--border))_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-40" />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
 
@@ -24,7 +23,7 @@ export default function HeroSection() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="mb-4 text-5xl font-black tracking-tight text-foreground sm:text-6xl lg:text-7xl"
         >
-          Your Name
+          Arinda Iradi
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -32,7 +31,7 @@ export default function HeroSection() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="mb-2 text-xl font-medium text-muted-foreground sm:text-2xl"
         >
-          Software Developer · CS Student
+          Software Developer · Data Scientist · CS Student
         </motion.p>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -40,7 +39,7 @@ export default function HeroSection() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mx-auto mb-8 max-w-lg text-base text-muted-foreground"
         >
-          Building elegant solutions at the intersection of technology, innovation, and social impact.
+          Building innovative solutions at the intersection of software engineering, data science, and social impact.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

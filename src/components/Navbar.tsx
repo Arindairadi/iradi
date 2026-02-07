@@ -17,7 +17,7 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/80 backdrop-blur-lg">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <a href="#" className="text-lg font-bold tracking-tight text-foreground">
-          Portfolio
+          Arinda Iradi
         </a>
         <div className="hidden items-center gap-1 md:flex">
           {links.map((l) => (

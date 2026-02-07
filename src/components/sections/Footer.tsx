@@ -5,13 +5,13 @@ export default function Footer() {
     <footer className="border-t border-border py-8 px-6">
       <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 sm:flex-row">
         <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Your Name. All rights reserved.
+          © {new Date().getFullYear()} Arinda Iradi. All rights reserved.
         </p>
         <div className="flex gap-4">
           {[
-            { icon: Github, href: "https://github.com", label: "GitHub" },
+            { icon: Github, href: "https://github.com/Arindairadi", label: "GitHub" },
             { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-            { icon: Mail, href: "mailto:your.email@example.com", label: "Email" },
+            { icon: Mail, href: "mailto:arindairadi@email.com", label: "Email" },
           ].map((s) => (
             <a
               key={s.label}
