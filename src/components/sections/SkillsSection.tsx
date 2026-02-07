@@ -1,0 +1,66 @@
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { Badge } from "@/components/ui/badge";
+import { Code2, Globe, Wrench, Users } from "lucide-react";
+
+const skillCategories = [
+  {
+    icon: Code2,
+    title: "Programming Languages",
+    skills: ["Python", "JavaScript", "Java", "C", "C++"],
+  },
+  {
+    icon: Globe,
+    title: "Web Technologies",
+    skills: ["HTML", "CSS", "React", "Node.js", "TypeScript"],
+  },
+  {
+    icon: Wrench,
+    title: "Tools & Platforms",
+    skills: ["Git", "GitHub", "VS Code", "Linux", "Docker"],
+  },
+  {
+    icon: Users,
+    title: "Soft Skills",
+    skills: ["Problem Solving", "Teamwork", "Research", "Communication", "Leadership"],
+  },
+];
+
+export default function SkillsSection() {
+  const { ref, isVisible } = useScrollAnimation();
+
+  return (
+    <section id="skills" className="bg-muted/50 py-24 px-6">
+      <div
+        ref={ref}
+        className={`mx-auto max-w-5xl transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+      >
+        <h2 className="mb-2 text-center font-mono text-sm tracking-widest text-primary">SKILLS</h2>
+        <h3 className="mb-12 text-center text-3xl font-bold text-foreground sm:text-4xl">
+          What I Work With
+        </h3>
+        <div className="grid gap-6 sm:grid-cols-2">
+          {skillCategories.map((cat) => (
+            <div
+              key={cat.title}
+              className="rounded-xl border border-border bg-card p-6 transition-shadow hover:shadow-md"
+            >
+              <div className="mb-4 flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+                  <cat.icon className="h-5 w-5 text-primary" />
+                </div>
+                <h4 className="font-semibold text-foreground">{cat.title}</h4>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {cat.skills.map((skill) => (
+                  <Badge key={skill} variant="secondary" className="font-mono text-xs">
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
