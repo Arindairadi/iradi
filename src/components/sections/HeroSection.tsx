@@ -31,7 +31,7 @@ export default function HeroSection() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="mb-2 text-xl font-medium text-muted-foreground sm:text-2xl"
         >
-          Software Developer · Data Scientist · CS Student
+          Software Developer · Data Scientist · 
         </motion.p>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
