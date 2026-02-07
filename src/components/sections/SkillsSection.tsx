@@ -6,7 +6,7 @@ const skillCategories = [
   {
     icon: Code2,
     title: "Programming Languages",
-    skills: ["Python", "JavaScript", "Java", "C", "C++", "PHP"],
+    skills: ["Python", "JavaScript",  "PHP"],
   },
   {
     icon: Globe,
@@ -16,12 +16,12 @@ const skillCategories = [
   {
     icon: BarChart3,
     title: "Data Science & ML",
-    skills: ["Pandas", "NumPy", "Scikit-learn", "TensorFlow", "Data Visualization", "SQL"],
+    skills: ["Pandas", "NumPy", "Scikit-learn", "MicrosoftpowerBi", "Data Visualization", "SQL"],
   },
   {
     icon: Wrench,
     title: "Tools & Platforms",
-    skills: ["Git", "GitHub", "VS Code", "Linux", "Docker"],
+    skills: ["Git", "GitHub", "VS Code", "Docker"],
   },
   {
     icon: Users,
