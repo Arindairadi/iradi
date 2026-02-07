@@ -17,18 +17,18 @@ export default function AboutSection() {
         <div className="grid gap-8 md:grid-cols-2">
           <div className="space-y-4 text-muted-foreground leading-relaxed">
             <p>
-              I'm a passionate Computer Science student and aspiring software developer with a deep curiosity for technology and its potential to drive positive change. My academic journey has equipped me with strong foundations in algorithms, data structures, and software engineering principles.
+              I'm Arinda Iradi — a Computer Science student, software developer, and data scientist passionate about leveraging technology to solve real-world problems. I enjoy building full-stack web applications, analyzing data for actionable insights, and creating digital tools that empower communities.
             </p>
             <p>
-              I thrive on solving complex problems and building applications that make a difference. Whether it's crafting intuitive web experiences, analyzing data for meaningful insights, or exploring new frameworks, I bring enthusiasm and dedication to every project.
+              From developing agricultural platforms like FarmNet to building health systems and interactive learning tools, I bring creativity and purpose to every project. I'm driven by curiosity and a desire to make technology accessible and impactful.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-4">
             {[
-              { icon: User, title: "CS Student", desc: "Pursuing a degree in Computer Science with a focus on sustainability" },
-              { icon: BookOpen, title: "Lifelong Learner", desc: "Always exploring new technologies and methodologies" },
-              { icon: Globe, title: "Social Impact", desc: "Passionate about using tech for community development" },
-              { icon: Lightbulb, title: "Problem Solver", desc: "Analytical thinker who loves tackling challenges" },
+              { icon: User, title: "CS Student", desc: "Studying Computer Science with a passion for software engineering" },
+              { icon: BookOpen, title: "Data Scientist", desc: "Exploring data analysis, machine learning, and AI" },
+              { icon: Globe, title: "Social Impact", desc: "Building tech for agriculture, health, and community development" },
+              { icon: Lightbulb, title: "Problem Solver", desc: "Turning complex challenges into elegant digital solutions" },
             ].map((item) => (
               <div key={item.title} className="rounded-lg border border-border bg-card p-4">
                 <item.icon className="mb-2 h-5 w-5 text-primary" />

@@ -1,17 +1,22 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Badge } from "@/components/ui/badge";
-import { Code2, Globe, Wrench, Users } from "lucide-react";
+import { Code2, Globe, Wrench, Users, BarChart3 } from "lucide-react";
 
 const skillCategories = [
   {
     icon: Code2,
     title: "Programming Languages",
-    skills: ["Python", "JavaScript", "Java", "C", "C++"],
+    skills: ["Python", "JavaScript", "Java", "C", "C++", "PHP"],
   },
   {
     icon: Globe,
     title: "Web Technologies",
     skills: ["HTML", "CSS", "React", "Node.js", "TypeScript"],
+  },
+  {
+    icon: BarChart3,
+    title: "Data Science & ML",
+    skills: ["Pandas", "NumPy", "Scikit-learn", "TensorFlow", "Data Visualization", "SQL"],
   },
   {
     icon: Wrench,
@@ -38,7 +43,7 @@ export default function SkillsSection() {
         <h3 className="mb-12 text-center text-3xl font-bold text-foreground sm:text-4xl">
           What I Work With
         </h3>
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {skillCategories.map((cat) => (
             <div
               key={cat.title}

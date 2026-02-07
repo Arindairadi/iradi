@@ -7,9 +7,9 @@ import { Mail, Github, Linkedin, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const socials = [
-  { icon: Mail, label: "your.email@example.com", href: "mailto:your.email@example.com" },
-  { icon: Github, label: "github.com/yourusername", href: "https://github.com" },
-  { icon: Linkedin, label: "linkedin.com/in/yourusername", href: "https://linkedin.com" },
+  { icon: Mail, label: "arindairadi@email.com", href: "mailto:arindairadi@email.com" },
+  { icon: Github, label: "github.com/Arindairadi", href: "https://github.com/Arindairadi" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com" },
 ];
 
 export default function ContactSection() {
@@ -36,7 +36,7 @@ export default function ContactSection() {
         <div className="grid gap-10 md:grid-cols-2">
           <div className="space-y-6">
             <p className="text-muted-foreground">
-              I'm always open to discussing new projects, creative ideas, or opportunities. Feel free to reach out!
+              I'm always open to discussing new projects, data science collaborations, or opportunities to create social impact through technology.
             </p>
             <div className="space-y-4">
               {socials.map((s) => (
