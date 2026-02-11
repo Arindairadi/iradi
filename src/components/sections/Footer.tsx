@@ -5,12 +5,12 @@ export default function Footer() {
     <footer className="border-t border-border py-8 px-6">
       <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 sm:flex-row">
         <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Arinda Iradi. All rights reserved.
+          © {new Date().getFullYear()} Arinda Iradi. Built with passion & purpose.
         </p>
-        <div className="flex gap-4">
+        <div className="flex gap-3">
           {[
             { icon: Github, href: "https://github.com/Arindairadi", label: "GitHub" },
-            { icon: Linkedin, href: "www.linkedin.com/in/arindairadi", label: "LinkedIn" },
+            { icon: Linkedin, href: "https://www.linkedin.com/in/arindairadi", label: "LinkedIn" },
             { icon: Mail, href: "mailto:iradiarinda63@gmail.com", label: "Email" },
           ].map((s) => (
             <a
@@ -19,9 +19,9 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={s.label}
-              className="text-muted-foreground transition-colors hover:text-foreground"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-all hover:border-primary hover:text-primary hover:scale-110"
             >
-              <s.icon className="h-5 w-5" />
+              <s.icon className="h-4 w-4" />
             </a>
           ))}
         </div>
