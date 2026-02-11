@@ -1,7 +1,8 @@
+import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Github, ExternalLink } from "lucide-react";
+import { Github, ExternalLink, Folder } from "lucide-react";
 
 const projects = [
   {
@@ -9,17 +10,19 @@ const projects = [
     description: "An innovative digital platform designed to empower farmers by connecting them to critical agricultural resources, information, and markets — bridging the gap between farmers and opportunity.",
     tech: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/Arindairadi/Farmnet",
+    featured: true,
   },
   {
     title: "LYCA Health System",
-    description: "A web-based health system providing accessible healthcare information and services through a modern digital interface.",
+    description: "A web-based health system providing accessible healthcare information and services through a modern digital interface for underserved communities.",
     tech: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/Arindairadi/LYCA",
+    featured: true,
   },
   {
     title: "Sky Pulse",
     description: "A web-based application that provides real-time weather updates and location-based forecasts to keep users informed about current conditions.",
-    tech: ["JavaScript", "API Integration", "CSS"],
+    tech: ["JavaScript", "API Integration", "HTML"],
     github: "https://github.com/Arindairadi/sky-pulse",
   },
   {
@@ -33,6 +36,12 @@ const projects = [
     description: "An interactive quiz game perfect for learners of all ages to enhance their math abilities through quick and engaging quizzes.",
     tech: ["JavaScript", "HTML", "CSS"],
     github: "https://github.com/Arindairadi/multiplication-quiz-game",
+  },
+  {
+    title: "Personal Portfolio",
+    description: "A personal portfolio website showcasing projects, skills, and professional journey as a developer and data scientist.",
+    tech: ["HTML", "CSS"],
+    github: "https://github.com/Arindairadi/portfolio",
   },
 ];
 
@@ -50,29 +59,42 @@ export default function ProjectsSection() {
           What I've Built
         </h3>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((p) => (
-            <div
+          {projects.map((p, i) => (
+            <motion.div
               key={p.title}
-              className="group flex flex-col rounded-xl border border-border bg-card p-6 transition-all hover:shadow-md hover:border-primary/30"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.08 }}
+              className={`group hover-lift card-shine flex flex-col rounded-xl border bg-card p-6 ${
+                p.featured ? "border-primary/30 ring-1 ring-primary/10" : "border-border"
+              }`}
             >
-              <h4 className="mb-2 text-lg font-semibold text-foreground">{p.title}</h4>
-              <p className="mb-4 flex-1 text-sm text-muted-foreground">{p.description}</p>
+              <div className="mb-3 flex items-center justify-between">
+                <Folder className="h-5 w-5 text-primary" />
+                {p.featured && (
+                  <Badge className="bg-primary/10 text-primary text-xs font-mono">Featured</Badge>
+                )}
+              </div>
+              <h4 className="mb-2 text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
+                {p.title}
+              </h4>
+              <p className="mb-4 flex-1 text-sm text-muted-foreground leading-relaxed">{p.description}</p>
               <div className="mb-4 flex flex-wrap gap-2">
                 {p.tech.map((t) => (
-                  <Badge key={t} variant="outline" className="font-mono text-xs">
+                  <span key={t} className="font-mono text-xs text-muted-foreground">
                     {t}
-                  </Badge>
+                  </span>
                 ))}
               </div>
               <div className="flex gap-2">
-                <Button size="sm" variant="outline" asChild>
+                <Button size="sm" variant="ghost" className="h-8 px-2" asChild>
                   <a href={p.github} target="_blank" rel="noopener noreferrer">
-                    <Github className="mr-1 h-3.5 w-3.5" />
-                    Code
+                    <Github className="h-4 w-4" />
                   </a>
                 </Button>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

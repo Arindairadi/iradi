@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { GraduationCap, Briefcase, Heart, Award } from "lucide-react";
 
@@ -6,29 +7,29 @@ const timeline = [
     icon: GraduationCap,
     period: "2021 – Present",
     title: "B.Sc. Computer Science",
-    org: "University Name",
-    desc: "Focused on software engineering, algorithms, and sustainable development. Active member of the CS society.",
+    org: "University",
+    desc: "Focused on software engineering, algorithms, data science, and sustainable development. Active member of the CS society.",
   },
   {
     icon: Briefcase,
-    period: "Summer 2023",
-    title: "Software Development Intern",
-    org: "Tech Company",
-    desc: "Built internal tools using React and Node.js. Collaborated with a team of 5 engineers on agile sprints.",
+    period: "2023 – Present",
+    title: "Software Developer & Data Scientist",
+    org: "Freelance / Open Source",
+    desc: "Building full-stack web applications and data-driven solutions. Created platforms like FarmNet and LYCA Health System.",
   },
   {
     icon: Heart,
     period: "2022 – Present",
     title: "Community Tech Volunteer",
-    org: "Local NGO",
-    desc: "Teaching coding workshops and building digital tools for community empowerment programs.",
+    org: "Social Impact Projects",
+    desc: "Teaching coding workshops and building digital tools for community empowerment — focusing on agriculture and health.",
   },
   {
     icon: Award,
-    period: "2022",
-    title: "Research Assistant",
-    org: "University Research Lab",
-    desc: "Contributed to a data science research project analyzing urban sustainability patterns.",
+    period: "2022 – Present",
+    title: "Data Science & Research",
+    org: "Academic & Personal Projects",
+    desc: "Applying machine learning and data analysis to real-world problems using Python, Pandas, and Power BI.",
   },
 ];
 
@@ -46,12 +47,18 @@ export default function ExperienceSection() {
           My Journey
         </h3>
         <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-[19px] top-2 h-[calc(100%-1rem)] w-px bg-border" />
+          <div className="absolute left-[19px] top-2 h-[calc(100%-1rem)] w-px bg-gradient-to-b from-primary/50 via-border to-transparent" />
           <div className="space-y-8">
             {timeline.map((item, i) => (
-              <div key={i} className="relative flex gap-6">
-                <div className="z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border bg-card">
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+                className="relative flex gap-6"
+              >
+                <div className="z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border bg-card shadow-sm">
                   <item.icon className="h-4 w-4 text-primary" />
                 </div>
                 <div className="pb-2">
@@ -60,7 +67,7 @@ export default function ExperienceSection() {
                   <p className="text-sm font-medium text-muted-foreground">{item.org}</p>
                   <p className="mt-1 text-sm text-muted-foreground">{item.desc}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

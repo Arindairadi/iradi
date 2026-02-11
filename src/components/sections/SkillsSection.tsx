@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Badge } from "@/components/ui/badge";
 import { Code2, Globe, Wrench, Users, BarChart3 } from "lucide-react";
@@ -6,7 +7,7 @@ const skillCategories = [
   {
     icon: Code2,
     title: "Programming Languages",
-    skills: ["Python", "JavaScript",  "PHP"],
+    skills: ["Python", "JavaScript", "PHP"],
   },
   {
     icon: Globe,
@@ -16,7 +17,7 @@ const skillCategories = [
   {
     icon: BarChart3,
     title: "Data Science & ML",
-    skills: ["Pandas", "NumPy", "Scikit-learn", "MicrosoftpowerBi", "Data Visualization", "SQL"],
+    skills: ["Pandas", "NumPy", "Scikit-learn", "Microsoft Power BI", "Data Visualization", "SQL"],
   },
   {
     icon: Wrench,
@@ -44,10 +45,14 @@ export default function SkillsSection() {
           What I Work With
         </h3>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {skillCategories.map((cat) => (
-            <div
+          {skillCategories.map((cat, i) => (
+            <motion.div
               key={cat.title}
-              className="rounded-xl border border-border bg-card p-6 transition-shadow hover:shadow-md"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.08 }}
+              className="hover-lift card-shine rounded-xl border border-border bg-card p-6"
             >
               <div className="mb-4 flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
@@ -62,7 +67,7 @@ export default function SkillsSection() {
                   </Badge>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
